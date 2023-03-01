@@ -1,0 +1,11 @@
+   #bottomBtn {
+       width: 100%;
+       background-color: var(--black);
+   } 
+
+   #bottomBtn:hover{
+    background-color: var(--green);
+   }
+
+
+   

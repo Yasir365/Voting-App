@@ -1,0 +1,66 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th><h3>Country</h3></th>
+            <th colspan="2"><button id="addButton" (click)="show1()">Add</button></th>
+        </tr>
+        
+        <tr *ngFor="let item of data.positions.country;let i=index">
+            <td>{{item.name}}</td>
+            <td><button (click)="show3(i)">Edit</button></td>
+            <td><button (click)="deleteCountryPos(i)">Delete</button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    
+    <table class="table">
+        <tr>
+            <th><h3>City</h3></th>
+            <th colspan="2"><button id="addButton" (click)="show2()">Add</button></th>
+        </tr>        
+        <tr *ngFor="let item of data.positions.city;let i=index">
+            <td>{{item.name}}</td>
+            <td><button (click)="show4(i)">Edit</button></td>
+            <td><button (click)="deleteCityPos(i)">Delete</button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="addBox" *ngIf="addBox1==true">
+        <label>Name:</label>
+        <input type="text" placeholder="Enter Country Position..." [(ngModel)]="countryPos">
+        <div class="buttonGroup">
+            <button type="submit" (click)="addCountryPos()">Save</button>
+            <button type="button" (click)="back()">Back</button>
+        </div>
+</div>
+
+<div class="addBox" *ngIf="addBox2==true">
+    <label>Name:</label>
+    <input type="text" placeholder="Enter City Position..." [(ngModel)]="cityPos">
+    <div class="buttonGroup">
+        <button type="submit" (click)="addCityPos()">Save</button>
+        <button type="button" (click)="back()">Back</button>
+    </div>
+</div>
+
+<div class="addBox" *ngIf="addBox3==true">
+    <label>Name:</label>
+    <input type="text" placeholder="Enter Country Position..." [(ngModel)]="editCountryIn">
+    <div class="buttonGroup">
+        <button type="submit" (click)="editCountryPos()">Save</button>
+        <button type="button" (click)="back()">Back</button>
+    </div>
+</div>
+
+
+<div class="addBox" *ngIf="addBox4==true">
+    <label>Name:</label>
+    <input type="text" placeholder="Enter City Position..." [(ngModel)]="editCityIn">
+    <div class="buttonGroup">
+        <button type="submit" (click)="editCityPos()">Save</button>
+        <button type="button" (click)="back()">Back</button>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container" *ngIf="result==false">
+    <table class="table">
+        <tr><td colspan="4"><h2>City 1 Voting</h2></td></tr>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Vote</th>
+            <th><button id="addButton" (click)="closeVoting()" >Close</button></th>
+        </tr>
+
+        <tr *ngFor="let item of serviceData.city1;let i=index">
+            <td>{{item.name}}</td>
+            <td>{{item.position}}</td>
+            <td>{{item.vote}}</td>
+            <td >
+                <button (click)="vote(i)">Vote</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<div class="container" *ngIf="result==true">
+    <h1>Voting Time Ends...</h1>
+</div>

@@ -1,0 +1,12 @@
+#addButton {
+    width: 100%;
+    background-color: var(--black);
+    color: white;
+    margin: 0 auto;
+}
+
+
+#addButton:hover{
+    background-color: var(--green);
+}
+

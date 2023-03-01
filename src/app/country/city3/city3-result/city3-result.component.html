@@ -1,0 +1,24 @@
+<div class="container" *ngIf="result==false">
+    <h1>City 3 Voting continue... </h1>
+ </div>
+ 
+ 
+ <div class="container" *ngIf="result==true">
+     <table class="table">
+         <tr><td colspan="4"><h2>Result </h2></td></tr>
+ 
+         <tr>
+             <th>Name</th>
+             <th>Position</th>
+             <th>Vote</th>
+         </tr>
+ 
+         <tr *ngFor="let item of data.city3;let i=index">
+             <td>{{item.name}}</td>
+             <td>{{item.position}}</td>
+             <td>{{item.vote}}</td>
+             
+         </tr>
+ 
+     </table>
+ </div>

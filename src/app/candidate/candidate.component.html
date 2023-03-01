@@ -1,0 +1,84 @@
+<div class="container">
+    <table class="table">
+        <tr><td colspan="6"><h2>Condidates</h2></td></tr>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country Position</th>
+            <th>City Position</th>
+            <th colspan="2">
+                <button id="bottomBtn" (click)="showAdd()">Add Candidate</button>
+
+            </th>
+        </tr>
+
+        <tr *ngFor="let item of data.candidates;let i = index">
+            <td>{{item.name}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.countryPosition}}</td>
+            <td>{{item.cityPosition}}</td>
+            <td><button (click)="showEdit(item,i)">Edit</button></td>
+            <td><button (click)="deleteCandidate(i)">Delete</button></td>
+        </tr>
+        <tr>
+
+        </tr>
+    </table>
+
+    <div class="addBox" *ngIf="addBox==true">
+        <form (ngSubmit)="addCandidate()" [formGroup]="addForm">
+
+            <label>Name:</label>
+            <input formControlName="name" type="text" placeholder="Enter Candidate Name...">
+
+            <label>City:</label>
+            <select formControlName="city" value="">
+                <option *ngFor="let item of data.cities">{{item}}</option>
+            </select>
+
+            <label>Country Position:</label>
+            <select formControlName="countryPos">
+                <option *ngFor="let item of data.positions.country">{{item.name}}</option>
+            </select>
+
+            <label>City Position:</label>
+            <select formControlName="cityPos" name="abc">
+                <option *ngFor="let item of data.positions.city">{{item.name}}</option>
+            </select>
+
+            <div class="buttonGroup">
+                <button type="submit" (click)="addCandidate()">Save</button>
+                <button type="button" (click)="Back()">Back</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="addBox" *ngIf="editBox==true">
+
+        <label>Name:</label>
+        <input type="text" placeholder="Enter Candidate Name" [(ngModel)]="editName">
+
+        <label>City:</label>
+        <select [(ngModel)]="editCity" >
+            <option *ngFor="let item of data.cities">{{item}}</option>
+
+        </select>
+
+        <label>Country Position:</label>
+        <select [(ngModel)]="editCountryPos">
+            <option *ngFor="let item of data.positions.country">{{item.name}}</option>
+        </select>
+
+        <label>City Position:</label>
+        <select [(ngModel)]="editCityPos">
+            <option *ngFor="let item of data.positions.city">{{item.name}}</option>
+        </select>
+
+        <div class="buttonGroup">
+            <button type="submit" (click)="updateCandidate()">Update</button>
+            <button type="button" (click)="Back()">Back</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,131 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+:root {
+    --silver: #E3E6F3;
+    --green: #088178;
+    --black: #232f3e;
+  }
+  
+h1{
+    text-align: center  ;
+}
+
+h2{
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.container table {
+    margin: 0 auto;
+    padding: 5px 10px;
+}
+
+
+table,
+td,
+th {
+    border-collapse: collapse;
+    border: 1px solid var(--green);
+    padding: 5px 20px;
+    text-align: start;
+}
+
+table button {
+    border: none;
+    padding: 5px 15px;
+    background-color: var(--green);
+    color: white;
+    width: 80px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+table button:hover {
+    background-color: var(--black);
+}
+
+#addButton {
+    background-color: var(--black);
+    color: white;
+    margin: 0 auto;
+}
+
+
+#addButton:hover{
+    background-color: var(--green);
+}
+
+
+
+/* Add Box */
+
+.addBox {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--silver);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+
+.addBox input {
+    padding: 10px 0;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+    text-indent: 10px;
+}
+
+.addBox label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.addBox option {
+    height: 20px;
+}
+
+.addBox select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+}
+
+.addBox button {
+    padding: 5px 10px;
+    border: none;
+    background-color: var(--green);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 0 10px;
+    width: 100px;
+}
+
+.addBox button:hover {
+    background-color: var(--black);
+}
